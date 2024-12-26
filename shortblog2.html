@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .slider-container {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .slide-text {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .nav-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slide active">
+            <img src="image1.png" alt="ISRO Scientists">
+            <div class="slide-title">How much do ISRO scientists earn?</div>
+            <div class="slide-text">
+                ISRO (Indian Space Research Organisation) offers competitive salaries for freshers and experienced scientists, enabling them to focus on innovation.
+            </div>
+        </div>
+        <div class="slide">
+            <img src="image2.png" alt="Overview of ISRO">
+            <div class="slide-title">Overview of ISRO's Role and Aspirations</div>
+            <div class="slide-text">
+                ISRO is India's premier space agency, known for its satellite launches, space missions, and scientific research. Many aspire to join ISRO to contribute to its groundbreaking projects.
+            </div>
+        </div>
+        <button class="nav-button prev" onclick="changeSlide(-1)">&#8249;</button>
+        <button class="nav-button next" onclick="changeSlide(1)">&#8250;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
