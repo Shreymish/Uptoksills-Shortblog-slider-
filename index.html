@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unique Animals and Their Habitats</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .main-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .slider-container {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .slide {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
+      .slide.active {
+        display: block;
+      }
+      .slide img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 8px;
+      }
+      .slide-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      .slide-text {
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .nav-button:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="slider-container">
+        <div class="slide active">
+          <img src="animal1.jpg" alt="Axolotl" />
+          <div class="slide-title">Axolotl</div>
+          <div class="slide-text">
+            Native to Mexico, the Axolotl is known for its ability to regenerate
+            limbs. It lives in freshwater lakes and is critically endangered.
+          </div>
+        </div>
+        <div class="slide">
+          <img src="animal2.jpg" alt="Pangolin" />
+          <div class="slide-title">Pangolin</div>
+          <div class="slide-text">
+            Pangolins are nocturnal mammals covered in protective keratin scales
+            and are found in Asia and Africa.
+          </div>
+        </div>
+        <div class="slide">
+          <img src="animal3.jpg" alt="Saiga Antelope" />
+          <div class="slide-title">Saiga Antelope</div>
+          <div class="slide-text">
+            Found in the steppes of Central Asia, the Saiga Antelope is
+            recognized for its unique, bulbous nose.
+          </div>
+        </div>
+        <button class="nav-button prev" onclick="changeSlide(-1)">
+          &#8249;
+        </button>
+        <button class="nav-button next" onclick="changeSlide(1)">
+          &#8250;
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function changeSlide(direction) {
+        slides[currentSlide].classList.remove("active");
+        currentSlide =
+          (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
