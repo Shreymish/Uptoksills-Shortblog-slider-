@@ -3,119 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unique Animals and Their Habitats</title>
+    <title>10 Unique Animals</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: #f9f9f9;
+        overflow-x: hidden;
       }
-      .main-container {
-        max-width: 800px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .slider-container {
+      .slider {
         position: relative;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .slide {
-        display: none;
-        text-align: center;
-        padding: 20px;
-      }
-      .slide.active {
-        display: block;
-      }
-      .slide img {
         width: 100%;
         max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
       }
-      .slide-title {
-        font-size: 24px;
-        font-weight: bold;
-        margin-top: 15px;
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
       }
-      .slide-text {
-        font-size: 16px;
-        margin-top: 10px;
-        line-height: 1.6;
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        background: #fff;
+        padding: 20px;
       }
-      .nav-button {
+      .slide img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .slide h2 {
+        margin: 15px 0 10px;
+      }
+      .navigation {
         position: absolute;
         top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
         transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
+      }
+      .navigation button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
         border: none;
         padding: 10px;
         cursor: pointer;
         border-radius: 50%;
       }
-      .nav-button:hover {
-        background: rgba(0, 0, 0, 0.8);
-      }
-      .prev {
-        left: 10px;
-      }
-      .next {
-        right: 10px;
+      .navigation button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
       }
     </style>
   </head>
   <body>
-    <div class="main-container">
-      <div class="slider-container">
-        <div class="slide active">
-          <img src="animal1.jpg" alt="Axolotl" />
-          <div class="slide-title">Axolotl</div>
-          <div class="slide-text">
-            Native to Mexico, the Axolotl is known for its ability to regenerate
-            limbs. It lives in freshwater lakes and is critically endangered.
-          </div>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <h2>Axolotl</h2>
+          <img src="axolotl.jpg" alt="Axolotl" />
+          <p>
+            The axolotl is a neotenic salamander native to Mexico. It is known
+            for its ability to regenerate limbs and other body parts.
+          </p>
         </div>
         <div class="slide">
-          <img src="animal2.jpg" alt="Pangolin" />
-          <div class="slide-title">Pangolin</div>
-          <div class="slide-text">
-            Pangolins are nocturnal mammals covered in protective keratin scales
-            and are found in Asia and Africa.
-          </div>
+          <h2>Aye-Aye</h2>
+          <img src="aye-aye.jpg" alt="Aye-Aye" />
+          <p>
+            The aye-aye is a nocturnal lemur found in Madagascar, recognizable
+            by its unique middle finger used to tap on wood and locate insects.
+          </p>
         </div>
         <div class="slide">
-          <img src="animal3.jpg" alt="Saiga Antelope" />
-          <div class="slide-title">Saiga Antelope</div>
-          <div class="slide-text">
-            Found in the steppes of Central Asia, the Saiga Antelope is
-            recognized for its unique, bulbous nose.
-          </div>
+          <h2>Glass Frog</h2>
+          <img src="glass-frog.jpg" alt="Glass Frog" />
+          <p>
+            Known for its translucent skin, the glass frog is native to Central
+            and South America, allowing a view of its internal organs.
+          </p>
         </div>
-        <button class="nav-button prev" onclick="changeSlide(-1)">
-          &#8249;
-        </button>
-        <button class="nav-button next" onclick="changeSlide(1)">
-          &#8250;
-        </button>
+        <div class="slide">
+          <h2>Tardigrade</h2>
+          <img src="tardigrade.jpg" alt="Tardigrade" />
+          <p>
+            The tardigrade, or water bear, is a microscopic creature known for
+            its resilience, surviving extreme conditions like space.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Pygmy Seahorse</h2>
+          <img src="pygmy-seahorse.jpg" alt="Pygmy Seahorse" />
+          <p>
+            These tiny seahorses blend seamlessly with coral reefs and are found
+            in the Pacific Ocean, especially near Indonesia and the Philippines.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Narwhal</h2>
+          <img src="narwhal.jpg" alt="Narwhal" />
+          <p>
+            The narwhal, known as the unicorn of the sea, is a whale with a long
+            tusk and is found in Arctic waters.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Yeti Crab</h2>
+          <img src="yeti-crab.jpg" alt="Yeti Crab" />
+          <p>
+            This deep-sea creature has hairy claws and is found near
+            hydrothermal vents in the Southern Ocean.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Pink Fairy Armadillo</h2>
+          <img src="pink-fairy-armadillo.jpg" alt="Pink Fairy Armadillo" />
+          <p>
+            The smallest species of armadillo, the pink fairy armadillo is found
+            in the sandy plains of Argentina.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Kakapo</h2>
+          <img src="kakapo.jpg" alt="Kakapo" />
+          <p>
+            The kakapo is a nocturnal, flightless parrot native to New Zealand,
+            known for its strong, musky scent.
+          </p>
+        </div>
+        <div class="slide">
+          <h2>Saiga Antelope</h2>
+          <img src="saiga-antelope.jpg" alt="Saiga Antelope" />
+          <p>
+            The saiga antelope is characterized by its distinctive bulbous nose
+            and is found in the steppes of Central Asia.
+          </p>
+        </div>
+      </div>
+      <div class="navigation">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
       </div>
     </div>
 
     <script>
-      let currentSlide = 0;
-      const slides = document.querySelectorAll(".slide");
+      const slides = document.querySelector(".slides");
+      const slideCount = document.querySelectorAll(".slide").length;
+      let currentIndex = 0;
 
-      function changeSlide(direction) {
-        slides[currentSlide].classList.remove("active");
-        currentSlide =
-          (currentSlide + direction + slides.length) % slides.length;
-        slides[currentSlide].classList.add("active");
-      }
+      document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : slideCount - 1;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+
+      document.getElementById("next").addEventListener("click", () => {
+        currentIndex = currentIndex < slideCount - 1 ? currentIndex + 1 : 0;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
     </script>
   </body>
 </html>
